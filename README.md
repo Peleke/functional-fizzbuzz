@@ -8,7 +8,9 @@
 npm run build
 ```
 
-...Then, to demonstrate classic FizzBuzz, do:
+If you get an error, it's because you're on Windows. Manually `mkdir bin`, then re-run the above. After that, you're good to go. 
+
+To demonstrate classic FizzBuzz, do:
 
 ```
 npm run fizzbuzz

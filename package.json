@@ -4,6 +4,7 @@
   "description": "Functional FizzBuzz: Or, a Study in Overkill.",
   "main": "bin/fizzbuzz.js",
   "scripts": {
+    "prebuild": "if [ ! -d 'bin' ]; then mkdir bin; fi",
     "build": "babel src/helpers.js > bin/helpers.js && babel src/fizzbuzz.js > bin/fizzbuzz.js && babel src/main.js > bin/main.js && babel src/utilities.js > bin/utilities.js",
     "fizzbuzz": "node bin/main"
   },
