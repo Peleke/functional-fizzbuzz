@@ -16,7 +16,7 @@ export const kestrel = value => value
 export const thunk = value => () => value
 
 /**
- * @param {function} fn    Function to call with only val
- * @param {any} val        Value to pass to fn
+ * @param {function} fn    Function to call with only val.
+ * @param {any} val        Value to pass to fn.
  */
 export const unary = fn => val => fn(val)
