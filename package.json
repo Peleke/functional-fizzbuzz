@@ -4,19 +4,13 @@
   "description": "Functional FizzBuzz: Or, a Study in Overkill.",
   "main": "bin/fizzbuzz.js",
   "scripts": {
-    "build": "babel src/helpers.js > bin/helpers.js && babel src/fizzbuzz.js > bin/fizzbuzz.js",
-    "fizzbuzz": "node bin/fizzbuzz"
+    "build": "babel src/helpers.js > bin/helpers.js && babel src/fizzbuzz.js > bin/fizzbuzz.js && babel src/main.js > bin/main.js && babel src/utilities.js > bin/utilities.js",
+    "fizzbuzz": "node bin/main"
   },
-  "keywords": [
-    "FizzBuzz",
-    "Étude",
-    "Etude"
-  ],
+  "keywords": ["FizzBuzz", "Étude", "Etude"],
   "author": "Peleke Sengstacke",
   "license": "ISC",
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-cli": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1"
   }
 }
