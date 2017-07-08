@@ -1,4 +1,4 @@
-# Etude I: A Study in Overkill
+# Étude I: A Study in Overkill
 
 ## FizzBuzz
 
