@@ -1,15 +1,19 @@
-import {filterFizz, filterBuzz, filterFizzBuzz, range, unary as u} from './helpers'
+/**
+ * @Importable
+ * This module contains the definition of the fizzbuzz
+ * list processinsg routine.
+ */
 
-const fizzbuzz = (upperBound = 100) => {
-  const hunnid = [...range(1, upperBound)]
-  
-  return hunnid
+import {
+  filterFizz, filterBuzz, filterFizzBuzz, 
+  inclusiveRange as range
+} from './helpers'
+
+/**
+ * @param {integer} upperBound Last number to test for FizzBuzz multiplicity.
+ */
+export const fizzbuzz = (upperBound = 100) => 
+  [...range(1, upperBound)]
     .map(filterFizzBuzz)
     .map(filterFizz)
     .map(filterBuzz)
-}
-
-(function main (upperBound) {
-  fizzbuzz(upperBound)
-    .forEach(u(console.log))
-}(process.argv[2]))

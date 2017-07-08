@@ -1,22 +1,14 @@
 /**
- * @param {any} value    The value to pass back.
+ * @Importandum
+ * This module contains methods used to process a list
+ * of numbers according to the FizzBuzz mutliplicity tests.
  */
-export const kestrel = value => value
+
+import {kestrel, thunk} from './utilities'
 
 /** 
- * @param {any} value    The value to wrap in a thunk.
- */
-export const thunk = value => () => value
-
-/**
- * @param {function} fn    Function to call with only val
- * @param {any} val        Value to pass to fn
- */
-export const unary = fn => val => fn(val)
-
-/** 
- * @param {integer} target   Number to test multiplicity against
- * @param {integer} number   Number to test multiplicity of
+ * @param {integer} target   The number to test multiplicity against.
+ * @param {integer} number   The number to test multiplicity of.
  */
 const isMultipleOf = target => number => number % target === 0
 
@@ -27,10 +19,10 @@ export const isBuzz = isMultipleOf(5)
 export const isFizzBuzz = number => isFizz(number) && isBuzz(number)
 
 /**
-  @param {function} predicate    Boolean function to call with subject.
-  @param {function} positive     Function to invoke if predicate returns true.
-  @param {function} negative     Function to invoke if predicate returns false.
-  @param {any} subject           Value to pass predicate function.
+  @param {function} predicate    A boolean function to call with subject.
+  @param {function} positive     The function to invoke if predicate returns true.
+  @param {function} negative     The function to invoke if predicate returns false.
+  @param {any} subject           The value to pass the predicate function.
 */
 export const filter = predicate => positive => negative => subject =>
   predicate(subject) ? positive(subject) : negative(subject)
@@ -42,10 +34,10 @@ export const filterBuzz = filter(isBuzz)(thunk("Buzz"))(kestrel)
 export const filterFizzBuzz = filter(isFizzBuzz)(thunk("FizzBuzz"))(kestrel)
 
 /**
- * @param {integer} lowerBound Integer to generate range from.
- * @param {integer} upperBound Integer 
+ * @param {integer} lowerBound The number to start counting from.
+ * @param {integer} upperBound The number to count to.
  */
-export function* range (lowerBound, upperBound) {
+export function* inclusiveRange (lowerBound, upperBound) {
   while (lowerBound <= upperBound) {
     yield lowerBound++
   }
